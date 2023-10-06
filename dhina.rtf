@@ -1,0 +1,168 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 App.js\par
+import React from 'react';\par
+import BlogList from './BlogList';\par
+function App() \{\par
+return (\par
+<div className="App">\par
+<BlogList />\par
+</div>\par
+);\par
+\}\par
+export default App;\par
+PostTitle.js\par
+import React from 'react';\par
+function PostTitle(\{ title \}) \{\par
+return <h2>\{title\}</h2>;\par
+\}\par
+export default PostTitle;\par
+PostContent.js\par
+import React from 'react';\par
+function PostContent(\{ content \}) \{\par
+return <p>\{content\}</p>;\par
+\}\par
+export default PostContent;\par
+PostAuthor.js\par
+import React from 'react';\par
+function PostAuthor(\{ author \}) \{\par
+return <p>Author: \{author\}</p>; \}\par
+export default PostAuthor;\par
+BlogPost.js\par
+import React from 'react';\par
+import PostTitle from './PostTitle';\par
+import PostContent from './PostContent';\par
+import PostAuthor from './PostAuthor';\par
+function BlogPost(\{ title, content, author \}) \{\par
+return (\par
+<div className="blog-post">\par
+<PostTitle title=\{title\} />\par
+<PostContent content=\{content\} />\par
+<PostAuthor author=\{author\} />\par
+</div>\par
+);\par
+\}\par
+export default BlogPost;\par
+BlogList.js\par
+import React, \{ useState \} from 'react';\par
+import BlogPost from './Blogpost';\par
+import quotes from './quotes.json';\par
+const blogPosts = [\par
+\{\par
+title: 'Post 1 Title- A VISIT FROM THE GOON SQUAD',\par
+content:"It is easier to conjure the intellectual-literary atmosphere of\par
+an era when it is 30 years\rquote  past than when it is a mere decade ago. It is hard\par
+to see 2010 right now, as we wait for time and the canon to true the lens, but\par
+I have a very clear sense-memory of revelation and exhilaration as I sped\par
+through David Mitchell\rquote s epic-historical ghost story, The Thousand Autumns of\par
+Jacob de Zoet, wondering if the spirit of Robert Louis Stevenson had\par
+momentarily taken possession of Haruki Murakami. Here was a reminder that the\par
+world of a novel\f1\emdash in this case, a very detailed rendering of an 18th-century\par
+Dutch trading post in the port of Nagasaki\emdash can be fuller, more vivid, than our\par
+own, that it can exist as a hothouse for the reader\rquote s moral imagination.It is\par
+difficult to say what another 25 years will make of The Thousand Autumns of\par
+Jacob de Zoet. In the context of Mitchell\rquote s more recent novels, and their\par
+space-operatic excesses, the plot of De Zoet seems worryingly baroque,\par
+show-offy, even. But it is clearly the work of the same writer who gave us the\par
+near-perfect coming-of-age novel, Black Swan Green, its language similarly\par
+precise and unexpected, all in aid of a story that seems somehow to tell\par
+itself, a true history that never quite happened.",\par
+author:"Jonny Diamond",\par
+\},\par
+\{\par
+title: 'Post 2Title- TRAIN DREAMS',\par
+content:" If I was tasked with proving that literary awards are a cruel\par
+joke and that life is nothing but a bleak and meaningless trudge toward the\par
+grave, Exhibit A would be what I have dubbed The Great Pulitzer Prize for\par
+Fiction Travesty of 2012. 2012 was, of course, the year the Pulitzer board\par
+(not the jury) decided that no book published in the previous twelve months\par
+merited the most prestigious honor in American letters, despite the fact that\par
+the trinity of finalists included Denis Johnson\rquote s hallucinatory masterwork\par
+Train Dreams, as well as Karen Russell\rquote s lushly brilliant debut novel\par
+Swamplandia! and David Foster Wallace\rquote s unfinished opus The Pale King.Michael\par
+Cunningham in a rather wonderful letter to the New Yorker in the wake of the\par
+non-decision). Train Dreams may well be the 21st century\rquote s most perfect\par
+novella (he said, having of course read them all\'85). It\rquote s the incantatory\par
+story of a turn-of-the-century logger and railroad laborer, Robert Grainier,\par
+who loses his family to a wildfire and retreats deep into the woods of the\par
+Idaho panhandle as the country modernizes around him. Johnson\rquote s spare,\par
+strange, elegiac prose conjures a world that feels both ancient and ephemeral,\par
+full of beauty and menace and deep sorrow. As Anthony Doerr wrote in his New\par
+York Times review: \ldblquote His prose tiptoes a tightrope between peace and calamity,\par
+and beneath all of the novella\rquote s best moments, Johnson runs twin strains of\par
+tenderness and the threat of violence.\rdblquote  An American epic in miniature, Train\par
+Dreams is a visionary portrait of soul untethered from civilization, a man\par
+stoically persevering on his own hermetic terms in the face of unimaginable\par
+tragedy. A haunted and haunting reverie.",\par
+author:"Dan Sheehan"\par
+\},\par
+\{\par
+title:'Post3 Title-THE TIGER\rquote S WIFE ',\par
+content:" If I was tasked with proving that literary awards are a cruel\par
+joke and that life is nothing but a bleak and meaningless trudge toward the\par
+grave, Exhibit A would be what I have dubbed The Great Pulitzer Prize for\par
+Fiction Travesty of 2012. 2012 was, of course, the year the Pulitzer board\par
+(not the jury) decided that no book published in the previous twelve months\par
+merited the most prestigious honor in American letters, despite the fact that\par
+the trinity of finalists included Denis Johnson\rquote s hallucinatory masterwork\par
+Train Dreams, as well as Karen Russell\rquote s lushly brilliant debut novel\par
+Swamplandia! and David Foster Wallace\rquote s unfinished opus The Pale King.Michael\par
+Cunningham in a rather wonderful letter to the New Yorker in the wake of the\par
+non-decision). Train Dreams may well be the 21st century\rquote s most perfect\par
+novella (he said, having of course read them all\'85). It\rquote s the incantatory\par
+story of a turn-of-the-century logger and railroad laborer, Robert Grainier,\par
+who loses his family to a wildfire and retreats deep into the woods of the\par
+Idaho panhandle as the country modernizes around him. Johnson\rquote s spare,\par
+strange, elegiac prose conjures a world that feels both ancient and ephemeral,\par
+full of beauty and menace and deep sorrow. As Anthony Doerr wrote in his New\par
+York Times review: \ldblquote His prose tiptoes a tightrope between peace and calamity,\par
+and beneath all of the novella\rquote s best moments, Johnson runs twin strains of\par
+tenderness and the threat of violence.\rdblquote  An American epic in miniature, Train\par
+Dreams is a visionary portrait of soul untethered from civilization, a man\par
+stoically persevering on his own hermetic terms in the face of unimaginable\par
+tragedy. A haunted and haunting reverie.",\par
+author:"Olivia Rutigliano",\par
+\}\par
+];\par
+function getRandomQuote() \{\par
+const randomIndex = Math.floor(Math.random() * quotes.length);\par
+return quotes[randomIndex];\par
+\}\par
+function BlogList() \{\par
+const [selectedPost, setSelectedPost] = useState(null);\par
+const handlePostClick = (index) => \{\par
+setSelectedPost(blogPosts[index]);\par
+\};\par
+return (\par
+<div>\par
+<h1>Blog Posts</h1>\par
+<ul>\par
+\{blogPosts.map((post, index) => (\par
+<li key=\{index\} onClick=\{() => handlePostClick(index)\}>\par
+\{post.title\}\par
+</li>\par
+))\}\par
+</ul>\par
+\{selectedPost && (\par
+<BlogPost\par
+title=\{selectedPost.title\}\par
+content=\{`$\{getRandomQuote()\} $\{selectedPost.content\}`\}\par
+author=\{selectedPost.author\}\par
+/>\par
+)\}\par
+</div>\par
+);\par
+\}\par
+export default BlogList;\par
+quotes.json\par
+[\par
+"Quote:A dead end is just a good place to turn around.\emdash  Naomi Judd",\par
+"Quote:Find out who you are and do it on purpose. \emdash  Dolly Parton",\par
+"Quote:The secret to getting ahead is getting started. \emdash  Mark\par
+Twain",\par
+"Quote:The time is always right to do what is right. \emdash  Martin Luther\par
+King Jr.",\par
+"Quote:Everything you want is on the other side of fear. \emdash  Jack\par
+Canfield" ]\f0\par
+}
+ 
